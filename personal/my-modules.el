@@ -6,7 +6,7 @@
 (require 'prelude-helm) ;; Interface for narrowing and search
 (require 'prelude-helm-everywhere) ;; Enable Helm everywhere
 ;; (require 'prelude-company)
-;; (require 'prelude-key-chord) ;; Binds useful features to key combinations
+(require 'prelude-key-chord) ;; Binds useful features to key combinations
 ;; (require 'prelude-mediawiki)
 (require 'prelude-evil)
 
@@ -32,7 +32,7 @@
 ;; (require 'prelude-scala)
 (require 'prelude-scheme)
 (require 'prelude-shell)
-;; (require 'prelude-scss)
+(require 'prelude-scss)
 (require 'prelude-web) ;; Emacs mode for web templates
 (require 'prelude-xml)
 (require 'prelude-yaml)
