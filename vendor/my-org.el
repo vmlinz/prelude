@@ -2,7 +2,7 @@
 (defun my-org-mode-init()
   (prelude-require-packages '(writegood-mode))
   (setq org-log-done t
-        org-todo-keywords '((sequence "TODO" "NEXT" "WAITING" "DONE" "|" "CANCELED"))
+        org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "DONE(d)" "|" "CANCELED(c)"))
         org-todo-keyword-faces '(("NEXT" . (:foreground "blue" :weight bold))))
   (add-hook 'org-mode-hook
             (lambda ()
@@ -22,25 +22,25 @@
   (setq org-agenda-show-log t
         org-agenda-todo-ignore-scheduled t
         org-agenda-todo-ignore-deadlines t)
-  (setq diary-file "~/Documents/notes/org/diary.org")
-  (setq org-agenda-diary-file "~/Documents/notes/org/diary.org")
 
-  (setq org-directory "~/Documents/notes/org")
-  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  (setq org-directory "~/Documents/notes/org/")
+  (setq diary-file (concat org-directory "diary.org"))
+  (setq org-agenda-diary-file (concat org-directory "diary.org"))
+  (setq org-default-notes-file (concat org-directory "notes.org"))
   ;; custom capture-templates
   (setq org-capture-templates
         '(
-          ("d" "Daily Notes" entry
-           (file+datetree (concat org-directory "/personal.org"))
+          ("p" "Personal Notes" entry
+           (file+datetree (concat org-directory "personal.org"))
            "* TODO %^{Description} %^g\n%?")
           ("w" "Work Journal" entry
-           (file+datetree (concat org-directory "/work.org"))
+           (file+datetree (concat org-directory "work.org"))
            "* TODO %^{Description} %^g\n%?")
           ("n" "Ramdom Notes" entry
-           (file+datetree (concat org-directory "/notes.org"))
+           (file+datetree (concat org-directory "notes.org"))
            "* %^{Description} %^g\n  %i\n  %?%U")
           ("x" "Clipboard Notes" entry
-           (file+datetree (concat org-directory "/notes.org"))
+           (file+datetree (concat org-directory "notes.org"))
            "* %^{Description} %^g\n  %x\n  %?%U")))
 
   ;;custom commands for the use of GTD.
