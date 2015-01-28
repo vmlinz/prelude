@@ -17,13 +17,13 @@
                                   (tool-bar-lines . 0)
                                   (right-fringe . 0))))
 
-(if (string-equal "darwin" (symbol-name system-type))
-    (if (and (fboundp 'daemonp) (daemonp))
-        (add-hook 'after-make-frame-functions
-                  (lambda (frame)
-                    (with-selected-frame frame
-                      (my-set-frame-parameters))))
-      (my-set-frame-parameters)))
+(when window-system
+  (if (and (fboundp 'daemonp) (daemonp))
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (with-selected-frame frame
+                    (my-set-frame-parameters))))
+    (my-set-frame-parameters)))
 
 ;; encodings and locales
 (defun my-coding-system-init()
@@ -54,8 +54,7 @@
   ;; backward char delete
   (global-set-key (kbd "C-;") 'backward-delete-char)
   ;; backward word delete
-  (global-set-key (kbd "C-M-;") 'backward-kill-word)
-  )
+  (global-set-key (kbd "C-M-;") 'backward-kill-word))
 (my-key-init)
 
 (provide 'my-emacs)
