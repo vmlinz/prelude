@@ -2,7 +2,7 @@
 (defun my-org-mode-init()
   (prelude-require-packages '(writegood-mode))
   (setq org-log-done t
-        org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "DONE(d)" "|" "CANCELED(c)"))
+        org-todo-keywords '((sequence "TODO(t)" "NEXT(n!)" "WAITING(w!)" "|" "DONE(d@)" "CANCELED(c!)"))
         org-todo-keyword-faces '(("NEXT" . (:foreground "blue" :weight bold))))
   (add-hook 'org-mode-hook
             (lambda ()
@@ -50,7 +50,7 @@
           ("n" todo "NEXT" nil)
           ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT")))))
 
-  (global-set-key "\C-cr" 'org-capture)
+  (global-set-key "\C-c\C-k" 'org-capture)
   (global-set-key "\C-cc" 'calendar)
   (global-set-key "\C-ca" 'org-agenda))
 
