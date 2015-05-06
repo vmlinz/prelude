@@ -10,8 +10,8 @@
   ;;   (set-fontset-font t charset
   ;;                     (font-spec :name "WenQuanYi Micro Hei Mono")))
   ;; set frame layout
-  (modify-all-frames-parameters '((width . 80)
-                                  (height . 25)
+  (modify-all-frames-parameters '((width . 100)
+                                  (height . 30)
                                   (vertical-scroll-bars . nil)
                                   (menu-bar-lines . 0)
                                   (tool-bar-lines . 0)
