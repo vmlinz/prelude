@@ -6,9 +6,9 @@
   (set-frame-font (font-spec :name "Inconsolata" :size 18))
 
   ;; set Chinese font
-  ;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
-  ;;   (set-fontset-font t charset
-  ;;                     (font-spec :name "WenQuanYi Micro Hei Mono")))
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font t charset
+                      (font-spec :name "STFangsong")))
   ;; set frame layout
   (modify-all-frames-parameters '((width . 100)
                                   (height . 30)
